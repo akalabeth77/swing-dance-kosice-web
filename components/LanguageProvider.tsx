@@ -15,8 +15,9 @@ export function LanguageProvider({ children, initialLanguage }: { children: Reac
   const [language, setLanguage] = useState<Language>(initialLanguage);
 
   useEffect(() => {
-    const storedLanguage = window.localStorage.getItem('lang');
-    if (isLanguage(storedLanguage ?? undefined) && storedLanguage !== language) {
+    const storedLanguage = window.localStorage.getItem('lang') ?? undefined;
+
+    if (isLanguage(storedLanguage) && storedLanguage !== language) {
       setLanguage(storedLanguage);
     }
   }, [language]);
