@@ -1,25 +1,29 @@
-const courses = [
-  {
-    level: 'Beginner Lindy Hop',
-    schedule: 'Mondays 18:00',
-    description: 'Perfect for first-time dancers. Learn basic rhythm, connection, and social confidence.'
-  },
-  {
-    level: 'Improver Swing',
-    schedule: 'Wednesdays 19:00',
-    description: 'Build vocabulary, musicality, and partner communication with intermediate concepts.'
-  },
-  {
-    level: 'Solo Jazz',
-    schedule: 'Fridays 17:30',
-    description: 'Classic jazz steps and choreography to boost style and groove.'
-  }
-];
+import { getDictionary } from '@/lib/i18n';
+import { getServerLanguage } from '@/lib/i18n-server';
 
 export default function CoursesPage() {
+  const t = getDictionary(getServerLanguage());
+  const courses = [
+    {
+      level: t.courseBeginnerTitle,
+      schedule: t.courseBeginnerSchedule,
+      description: t.courseBeginnerDescription
+    },
+    {
+      level: t.courseImproverTitle,
+      schedule: t.courseImproverSchedule,
+      description: t.courseImproverDescription
+    },
+    {
+      level: t.courseSoloTitle,
+      schedule: t.courseSoloSchedule,
+      description: t.courseSoloDescription
+    }
+  ];
+
   return (
     <section className="space-y-6">
-      <h1 className="text-3xl font-bold">Courses</h1>
+      <h1 className="text-3xl font-bold">{t.coursesTitle}</h1>
       <div className="grid gap-4 md:grid-cols-2">
         {courses.map((course) => (
           <article key={course.level} className="rounded-xl border border-slate-800 bg-slate-900 p-6">

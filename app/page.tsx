@@ -1,27 +1,29 @@
 import Link from 'next/link';
+import { getDictionary } from '@/lib/i18n';
+import { getServerLanguage } from '@/lib/i18n-server';
 
 export default function HomePage() {
+  const t = getDictionary(getServerLanguage());
+
   return (
     <section className="space-y-10">
       <div className="rounded-2xl bg-gradient-to-r from-amber-500 to-orange-600 p-10 text-slate-950 shadow-xl">
-        <h1 className="text-4xl font-bold md:text-6xl">Swing Dance Košice</h1>
-        <p className="mt-4 max-w-2xl text-lg">
-          Discover lindy hop socials, classes, and workshops in Košice. Join our friendly community and keep dancing.
-        </p>
+        <h1 className="text-4xl font-bold md:text-6xl">{t.siteName}</h1>
+        <p className="mt-4 max-w-2xl text-lg">{t.homeLead}</p>
         <div className="mt-6 flex gap-4">
           <Link href="/events" className="rounded-md bg-slate-950 px-4 py-2 font-semibold text-white">
-            Upcoming events
+            {t.homeUpcomingEvents}
           </Link>
           <Link href="/courses" className="rounded-md border border-slate-950 px-4 py-2 font-semibold">
-            Explore courses
+            {t.homeExploreCourses}
           </Link>
         </div>
       </div>
 
       <div className="grid gap-6 md:grid-cols-3">
-        <FeatureCard title="Events" description="Facebook-powered event calendar to stay up to date." href="/events" />
-        <FeatureCard title="Gallery" description="Highlights from social dances and workshops." href="/gallery" />
-        <FeatureCard title="Courses" description="Course info for beginners and advanced dancers." href="/courses" />
+        <FeatureCard title={t.featureEventsTitle} description={t.featureEventsDescription} href="/events" />
+        <FeatureCard title={t.featureGalleryTitle} description={t.featureGalleryDescription} href="/gallery" />
+        <FeatureCard title={t.featureCoursesTitle} description={t.featureCoursesDescription} href="/courses" />
       </div>
     </section>
   );
