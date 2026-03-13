@@ -3,6 +3,9 @@
 import Link from 'next/link';
 import { useI18n } from '@/components/LanguageProvider';
 
+const instagramUrl = process.env.NEXT_PUBLIC_INSTAGRAM_URL ?? 'https://www.instagram.com/swingdancekosice/';
+const facebookPageUrl = 'https://www.facebook.com/117207773156005';
+
 export function Navbar() {
   const { language, setLanguage, t } = useI18n();
 
@@ -31,6 +34,23 @@ export function Navbar() {
               </li>
             ))}
           </ul>
+
+          <a
+            href={facebookPageUrl}
+            target="_blank"
+            rel="noreferrer"
+            className="text-xs text-slate-300 transition hover:text-accent md:text-sm"
+          >
+            FB
+          </a>
+          <a
+            href={instagramUrl}
+            target="_blank"
+            rel="noreferrer"
+            className="text-xs text-slate-300 transition hover:text-accent md:text-sm"
+          >
+            Instagram
+          </a>
 
           <div className="flex items-center gap-2 text-xs md:text-sm">
             <span className="text-slate-300">{t('navLanguage')}:</span>

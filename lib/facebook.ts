@@ -5,11 +5,11 @@ type FacebookEventsResponse = {
 };
 
 export async function fetchFacebookEvents(): Promise<FacebookEvent[]> {
-  const pageId = process.env.FB_PAGE_ID;
+  const pageId = process.env.FB_PAGE_ID ?? '117207773156005';
   const accessToken = process.env.FB_ACCESS_TOKEN;
 
-  if (!pageId || !accessToken) {
-    throw new Error('Missing FB_PAGE_ID or FB_ACCESS_TOKEN');
+  if (!accessToken) {
+    throw new Error('Missing FB_ACCESS_TOKEN');
   }
 
   const query = new URLSearchParams({

@@ -18,10 +18,24 @@ Copy `.env.example` to `.env.local` and fill in values:
 cp .env.example .env.local
 ```
 
-- `FB_PAGE_ID`
+- `FB_PAGE_ID` (defaulted to your page `117207773156005`)
 - `FB_ACCESS_TOKEN`
 - `NEXT_PUBLIC_SUPABASE_URL`
 - `NEXT_PUBLIC_SUPABASE_ANON_KEY`
+- `SUPABASE_SERVICE_ROLE_KEY`
+- `ADMIN_EMAIL`
+- `ADMIN_PASSWORD`
+- `NEXT_PUBLIC_INSTAGRAM_URL` (defaulted to `https://www.instagram.com/swingdancekosice/`)
+
+## Admin user bootstrap
+
+After you set envs, create the admin user in Supabase Auth:
+
+```bash
+npm run create-admin
+```
+
+This script creates (or reuses) the `ADMIN_EMAIL` account and marks email as confirmed.
 
 ## Local development
 
