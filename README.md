@@ -37,6 +37,20 @@ npm run create-admin
 
 This script creates (or reuses) the `ADMIN_EMAIL` account and marks email as confirmed.
 
+
+## CMS setup (menu, articles, courses)
+
+Run SQL in `supabase/cms-schema.sql` inside Supabase SQL editor.
+
+This creates tables for:
+- `menu_items` (custom navigation links)
+- `articles` (homepage articles)
+- `courses` (course cards)
+
+It also seeds the initial courses:
+- Lindy Hop Beginners 1
+- Collegiate Shag Beginners 1
+
 ## Local development
 
 ```bash
