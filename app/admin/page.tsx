@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { getSupabaseClient } from '@/lib/supabase';
 import { getDictionary } from '@/lib/i18n';
 import { getServerLanguage } from '@/lib/i18n-server';
@@ -30,6 +31,12 @@ export default async function AdminPage() {
     <section className="space-y-6">
       <h1 className="text-3xl font-bold">{t.adminTitle}</h1>
       <p className="text-slate-300">{t.adminDescription}</p>
+
+      <div className="rounded-lg border border-slate-700 bg-slate-900/60 p-4 text-sm text-slate-300">
+        <p>
+          Prihlásenie pre admina je dostupné na <Link href="/admin/login" className="text-accent underline">/admin/login</Link>.
+        </p>
+      </div>
 
       {error ? (
         <div className="rounded-lg border border-red-500/30 bg-red-500/10 p-4 text-red-200">

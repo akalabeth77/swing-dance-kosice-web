@@ -17,10 +17,10 @@ export function LanguageProvider({ children, initialLanguage }: { children: Reac
   useEffect(() => {
     const storedLanguage = window.localStorage.getItem('lang') ?? undefined;
 
-    if (isLanguage(storedLanguage) && storedLanguage !== language) {
+    if (isLanguage(storedLanguage)) {
       setLanguage(storedLanguage);
     }
-  }, [language]);
+  }, []);
 
   useEffect(() => {
     document.documentElement.lang = language;

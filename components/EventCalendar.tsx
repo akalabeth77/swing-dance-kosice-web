@@ -5,7 +5,7 @@ import { EventCard, FacebookEvent } from '@/components/EventCard';
 import { useI18n } from '@/components/LanguageProvider';
 
 export function EventCalendar() {
-  const { t } = useI18n();
+  const { language, t } = useI18n();
   const [events, setEvents] = useState<FacebookEvent[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -25,7 +25,7 @@ export function EventCalendar() {
     };
 
     void load();
-  }, [t]);
+  }, [language, t]);
 
   if (loading) return <div className="rounded-lg bg-slate-900 p-4">{t('eventsLoading')}</div>;
   if (error) return <div className="rounded-lg border border-red-500/30 bg-red-500/10 p-4 text-red-200">{error}</div>;
