@@ -6,7 +6,13 @@ import { useI18n } from '@/components/LanguageProvider';
 const instagramUrl = process.env.NEXT_PUBLIC_INSTAGRAM_URL ?? 'https://www.instagram.com/swingdancekosice/';
 const facebookPageUrl = 'https://www.facebook.com/117207773156005';
 
-export function Navbar() {
+type NavbarMenuItem = {
+  id: string;
+  label: string;
+  href: string;
+};
+
+export function Navbar({ customMenuItems }: { customMenuItems: NavbarMenuItem[] }) {
   const { language, setLanguage, t } = useI18n();
 
   const links = [
@@ -14,6 +20,7 @@ export function Navbar() {
     { href: '/events', label: t('navEvents') },
     { href: '/gallery', label: t('navGallery') },
     { href: '/courses', label: t('navCourses') },
+    ...customMenuItems.map((item) => ({ href: item.href, label: item.label })),
     { href: '/admin', label: t('navAdmin') }
   ];
 
