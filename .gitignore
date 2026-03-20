@@ -1,28 +1,12 @@
-# dependencies
 /node_modules
-
-# next.js
-/.next/
-/out/
-
-# production
-/build
-
-# misc
+/.next
+/vendor
+/storage/*.json
+/storage/*.csv
+/storage/*.log
+/.phpunit.result.cache
+/.idea
+/.vscode
 .DS_Store
-*.pem
-
-# debug
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-pnpm-debug.log*
-
-# local env files
-.env*.local
-
-# vercel
-.vercel
-
-# typescript
-*.tsbuildinfo
+.env
+.env.local

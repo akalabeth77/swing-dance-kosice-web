@@ -1,68 +1,55 @@
-# Swing Dance Košice Web
+# Swing Dance Košice starter
 
-Production-ready Next.js 14 web app for the Swing Dance Košice community.
+Starter pre komunitný web Swing Dance Košice so zameraním na:
 
-## Tech Stack
+- 📅 event calendar,
+- 📷 galériu,
+- 📝 workshop blog,
+- 🕺 registrácie na kurzy,
+- 🎟 event landing pages.
 
-- Next.js 14 (App Router)
-- TypeScript
-- Tailwind CSS
-- Supabase (`@supabase/supabase-js`)
-- Facebook Graph API integration
+## Prečo teraz build funguje na Verceli
 
-## Environment Variables
+Predchádzajúca verzia ostala iba ako PHP-only starter, ale Vercel projekt je nakonfigurovaný na `npm run vercel-build`, teda na Next.js build pipeline. Preto je v repozitári teraz opäť **Next.js App Router vrstva**, ktorá zobrazuje rovnaký obsah startera a je deployovateľná na Vercel bez chyby `Couldn't find any pages or app directory`.
 
-Copy `.env.example` to `.env.local` and fill in values:
-
-```bash
-cp .env.example .env.local
-```
-
-- `FB_PAGE_ID` (defaulted to your page `117207773156005`)
-- `FB_ACCESS_TOKEN`
-- `NEXT_PUBLIC_SUPABASE_URL`
-- `NEXT_PUBLIC_SUPABASE_ANON_KEY`
-- `SUPABASE_SERVICE_ROLE_KEY`
-- `ADMIN_EMAIL`
-- `ADMIN_PASSWORD`
-- `NEXT_PUBLIC_INSTAGRAM_URL` (defaulted to `https://www.instagram.com/swingdancekosice/`)
-
-## Admin user bootstrap
-
-After you set envs, create the admin user in Supabase Auth:
-
-```bash
-npm run create-admin
-```
-
-This script creates (or reuses) the `ADMIN_EMAIL` account and marks email as confirmed.
-
-
-## CMS setup (menu, articles, courses)
-
-Run SQL in `supabase/cms-schema.sql` inside Supabase SQL editor.
-
-This creates tables for:
-- `menu_items` (custom navigation links)
-- `articles` (homepage articles)
-- `courses` (course cards)
-
-It also seeds the initial courses:
-- Lindy Hop Beginners 1
-- Collegiate Shag Beginners 1
-
-## Local development
+## Lokálne spustenie
 
 ```bash
 npm install
 npm run dev
 ```
 
-## Deploy to Vercel
+Produkčný build:
 
-1. Push this repository to GitHub.
-2. Import the repository in Vercel.
-3. Set the environment variables in Vercel project settings.
-4. Deploy.
+```bash
+npm run vercel-build
+```
 
-The app is configured for direct Vercel deployment.
+## Facebook integrácia
+
+Ak chceš ťahať eventy a albumy z Facebooku, nastav env premenné:
+
+```bash
+FB_PAGE_ID="..."
+FB_ACCESS_TOKEN="..."
+```
+
+Ak Facebook dáta nie sú dostupné, automaticky sa použije lokálny demo obsah.
+
+## Registrácie na kurzy
+
+Kurzový formulár ide cez `app/api/register/route.js`.
+
+Voliteľne vieš napojiť webhook:
+
+```bash
+REGISTRATION_WEBHOOK_URL="https://..."
+```
+
+Keď je webhook nastavený, formulár odošle JSON payload ďalej do CRM, e-mail automation alebo iného backendu.
+
+## Dôležité poznámky
+
+- `app/` obsahuje Vercel-kompatibilný frontend.
+- `lib/` obsahuje starter dáta a Facebook fetch logiku.
+- Pôvodné PHP súbory ostali v repozitári ako referenčný starter / migračný základ, ale Vercel deployment používa Next.js vrstvu.
