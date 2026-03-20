@@ -1,68 +1,69 @@
-# Swing Dance Košice Web
+# Swing Dance Košice PHP Starter
 
-Production-ready Next.js 14 web app for the Swing Dance Košice community.
+WordPress-like PHP starter pre swing komunitu Swing Dance Košice.
 
-## Tech Stack
+## Čo starter obsahuje
 
-- Next.js 14 (App Router)
-- TypeScript
-- Tailwind CSS
-- Supabase (`@supabase/supabase-js`)
-- Facebook Graph API integration
+- 📅 **Event calendar** pripravený na načítanie dát z Facebook udalostí cez Graph API.
+- 📷 **Galériu** s fallback obsahom a možnosťou synchronizácie z Facebook albumov.
+- 📝 **Blog** pre workshopy, recapy a komunitný obsah.
+- 🕺 **Registrácie na kurzy** cez jednoduchý PHP formulár ukladajúci dáta do `storage/registrations.json`.
+- 🎟 **Event landing pages** s hero sekciou, benefitmi, harmonogramom a FAQ.
 
-## Environment Variables
+## Prečo „WordPress-like"
 
-Copy `.env.example` to `.env.local` and fill in values:
+Tento repozitár nie je plná inštalácia WordPressu. Je to ľahký PHP starter s architektúrou, ktorú vieš neskôr presunúť do:
 
-```bash
-cp .env.example .env.local
-```
+- WordPress témy,
+- custom pluginu,
+- ACF/Gutenberg blokov,
+- alebo vlastného malého PHP CMS.
 
-- `FB_PAGE_ID` (defaulted to your page `117207773156005`)
-- `FB_ACCESS_TOKEN`
-- `NEXT_PUBLIC_SUPABASE_URL`
-- `NEXT_PUBLIC_SUPABASE_ANON_KEY`
-- `SUPABASE_SERVICE_ROLE_KEY`
-- `ADMIN_EMAIL`
-- `ADMIN_PASSWORD`
-- `NEXT_PUBLIC_INSTAGRAM_URL` (defaulted to `https://www.instagram.com/swingdancekosice/`)
-
-## Admin user bootstrap
-
-After you set envs, create the admin user in Supabase Auth:
+## Spustenie lokálne
 
 ```bash
-npm run create-admin
+php -S 127.0.0.1:8080 router.php
 ```
 
-This script creates (or reuses) the `ADMIN_EMAIL` account and marks email as confirmed.
+Potom otvor:
 
+- `http://127.0.0.1:8080/`
+- `http://127.0.0.1:8080/events`
+- `http://127.0.0.1:8080/gallery`
+- `http://127.0.0.1:8080/blog`
+- `http://127.0.0.1:8080/courses`
+- `http://127.0.0.1:8080/landing-pages`
 
-## CMS setup (menu, articles, courses)
+## Facebook integrácia
 
-Run SQL in `supabase/cms-schema.sql` inside Supabase SQL editor.
-
-This creates tables for:
-- `menu_items` (custom navigation links)
-- `articles` (homepage articles)
-- `courses` (course cards)
-
-It also seeds the initial courses:
-- Lindy Hop Beginners 1
-- Collegiate Shag Beginners 1
-
-## Local development
+Ak chceš ťahať eventy a albumy z Facebooku, nastav env premenné:
 
 ```bash
-npm install
-npm run dev
+export FB_PAGE_ID="..."
+export FB_ACCESS_TOKEN="..."
+export FB_PAGE_URL="https://www.facebook.com/swingdancekosice"
+export APP_URL="http://127.0.0.1:8080"
 ```
 
-## Deploy to Vercel
+Starter sa pokúsi načítať:
 
-1. Push this repository to GitHub.
-2. Import the repository in Vercel.
-3. Set the environment variables in Vercel project settings.
-4. Deploy.
+- `/{page-id}/events`
+- `/{page-id}/albums`
 
-The app is configured for direct Vercel deployment.
+Ak Facebook dáta nie sú dostupné, automaticky použije lokálny demo obsah.
+
+## Štruktúra projektu
+
+- `index.php` – front controller.
+- `router.php` – router pre PHP built-in server.
+- `src/` – konfigurácia, routovanie, render logika a Facebook integrácia.
+- `templates/` – jednotlivé stránky a reusable layout.
+- `assets/styles.css` – vizuálny štýl startera.
+- `storage/` – jednoduché lokálne úložisko pre registrácie.
+
+## Ďalšie logické kroky
+
+1. Prehodiť demo arrays do databázy alebo WordPress custom post types.
+2. Napojiť registrácie na e-mail, CRM alebo checkout.
+3. Doplniť admin rozhranie.
+4. Nahradiť externé placeholder obrázky vlastným media library workflow.
