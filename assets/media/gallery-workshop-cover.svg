@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900">
+  <rect width="1600" height="900" fill="#102331"/>
+  <rect x="110" y="120" width="1380" height="660" rx="36" fill="#18384b"/>
+  <text x="170" y="320" fill="#89d1c5" font-family="Arial, sans-serif" font-size="48" letter-spacing="8">WORKSHOP WEEKEND</text>
+  <text x="170" y="470" fill="#ffffff" font-family="Georgia, serif" font-size="128" font-weight="700">Highlights</text>
+  <text x="170" y="600" fill="#d5eef0" font-family="Arial, sans-serif" font-size="42">Photo set ready for a local gallery workflow</text>
+</svg>

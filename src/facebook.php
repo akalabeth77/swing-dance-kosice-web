@@ -43,7 +43,7 @@ function facebook_events_feed(): array
     ]);
 
     if (!isset($response['data']) || !is_array($response['data'])) {
-        return sample_events();
+        return content_collection('events');
     }
 
     $events = [];
@@ -52,24 +52,23 @@ function facebook_events_feed(): array
             continue;
         }
 
-        $slug = slugify($event['name']);
         $events[] = [
-            'slug' => $slug,
+            'slug' => slugify($event['name']),
             'title' => $event['name'],
-            'excerpt' => trim((string)($event['description'] ?? '')) ?: 'Synchronizované z Facebook udalosti.',
+            'excerpt' => trim((string) ($event['description'] ?? '')) ?: 'Synchronizovane z Facebook udalosti.',
             'date' => $event['start_time'],
             'end_date' => $event['end_time'] ?? null,
-            'location' => $event['place']['name'] ?? 'Košice',
-            'cta_label' => 'Otvoriť FB event',
+            'location' => $event['place']['name'] ?? 'Kosice',
+            'cta_label' => 'Otvorit FB event',
             'cta_url' => 'https://www.facebook.com/events/' . ($event['id'] ?? ''),
-            'hero_image' => $event['cover']['source'] ?? sample_placeholder('event'),
+            'hero_image' => $event['cover']['source'] ?? media_asset('event-weekender.svg'),
             'source' => 'facebook',
-            'body' => nl2br(e((string)($event['description'] ?? 'Detaily budú doplnené z Facebook udalosti.'))),
-            'highlights' => ['Automaticky načítané z FB stránky', 'Vhodné ako základ landing page', 'Možnosť doplniť registráciu alebo CTA'],
+            'body' => nl2br(e((string) ($event['description'] ?? 'Detaily budu doplnene z Facebook udalosti.'))),
+            'highlights' => ['Automaticky nacitane z FB stranky', 'Vhodne ako zaklad landing page', 'Moznost doplnit registraciu alebo CTA'],
         ];
     }
 
-    return $events !== [] ? $events : sample_events();
+    return $events !== [] ? $events : content_collection('events');
 }
 
 function facebook_albums_feed(): array
@@ -80,7 +79,7 @@ function facebook_albums_feed(): array
     ]);
 
     if (!isset($response['data']) || !is_array($response['data'])) {
-        return sample_galleries();
+        return content_collection('galleries');
     }
 
     $albums = [];
@@ -98,14 +97,14 @@ function facebook_albums_feed(): array
 
         $albums[] = [
             'title' => $album['name'] ?? 'Facebook album',
-            'description' => $album['description'] ?? 'Importované z Facebook albumu.',
-            'cover' => $photos[0]['src'] ?? sample_placeholder('gallery'),
-            'photos' => $photos !== [] ? $photos : [['src' => sample_placeholder('gallery'), 'alt' => 'Placeholder galéria']],
+            'description' => $album['description'] ?? 'Importovane z Facebook albumu.',
+            'cover' => $photos[0]['src'] ?? media_asset('gallery-main.svg'),
+            'photos' => $photos !== [] ? $photos : [['src' => media_asset('gallery-main.svg'), 'alt' => 'Galeria']],
             'source' => 'facebook',
         ];
     }
 
-    return $albums !== [] ? $albums : sample_galleries();
+    return $albums !== [] ? $albums : content_collection('galleries');
 }
 
 function slugify(string $text): string
@@ -114,13 +113,4 @@ function slugify(string $text): string
     $text = strtolower($text);
     $text = preg_replace('/[^a-z0-9]+/', '-', $text) ?: '';
     return trim($text, '-') ?: 'item';
-}
-
-function sample_placeholder(string $type): string
-{
-    return match ($type) {
-        'event' => 'https://images.unsplash.com/photo-1515169067868-5387ec356754?auto=format&fit=crop&w=1200&q=80',
-        'gallery' => 'https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?auto=format&fit=crop&w=1200&q=80',
-        default => 'https://images.unsplash.com/photo-1504609813442-a8924e83f76e?auto=format&fit=crop&w=1200&q=80',
-    };
 }

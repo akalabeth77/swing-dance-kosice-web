@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900">
+  <rect width="1600" height="900" fill="#111f39"/>
+  <circle cx="1280" cy="190" r="130" fill="#f3b24d"/>
+  <rect x="90" y="90" width="1420" height="720" rx="42" fill="none" stroke="#f3b24d" stroke-width="6"/>
+  <text x="150" y="250" fill="#f7dcb4" font-family="Arial, sans-serif" font-size="44" letter-spacing="8">EVENT LANDING PAGE</text>
+  <text x="150" y="430" fill="#ffffff" font-family="Georgia, serif" font-size="132" font-weight="700">Spring Swing</text>
+  <text x="150" y="560" fill="#ffffff" font-family="Georgia, serif" font-size="132" font-weight="700">Weekender</text>
+</svg>

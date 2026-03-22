@@ -1,0 +1,38 @@
+[
+  {
+    "slug": "spring-swing-weekender",
+    "title": "Spring Swing Weekender",
+    "subtitle": "Vikendovy event funnel s hero sekciou, benefitmi, harmonogramom a CTA.",
+    "hero_image": "landing-weekender.svg",
+    "price": "Full pass od 69 EUR",
+    "cta_label": "Chcem full pass",
+    "cta_url": "#pricing",
+    "highlights": ["Live band party", "3 tracks workshopov", "Beginner-friendly onboarding"],
+    "schedule": [
+      { "day": "Piatok", "items": ["Check-in a welcome mixer", "Taster class", "Party do 02:00"] },
+      { "day": "Sobota", "items": ["Workshop blocks", "Teacher battle", "Live music night"] },
+      { "day": "Nedela", "items": ["Brunch social", "Final classes", "Community jam"] }
+    ],
+    "faq": [
+      { "question": "Da sa kupit aj party pass?", "answer": "Ano, landing page pocita s viacerymi cenovymi urovnami." },
+      { "question": "Ako prepojit checkout?", "answer": "CTA moze smerovat na WooCommerce, Stripe Checkout alebo externy formular." }
+    ]
+  },
+  {
+    "slug": "solo-jazz-bootcamp",
+    "title": "Solo Jazz Bootcamp",
+    "subtitle": "Jednostrankovy layout pre intenzivny workshop s lektormi a jasnou konverznou cestou.",
+    "hero_image": "landing-bootcamp.svg",
+    "price": "Weekend pass od 49 EUR",
+    "cta_label": "Rezervovat miesto",
+    "cta_url": "/courses/lindy-hop-zaciatocnici/register",
+    "highlights": ["2 dni treningu", "Video feedback", "Solo challenge showcase"],
+    "schedule": [
+      { "day": "Sobota", "items": ["Warm-up", "Rhythm lab", "Combo rehearsal"] },
+      { "day": "Nedela", "items": ["Groove clinic", "Stage drills", "Performance circle"] }
+    ],
+    "faq": [
+      { "question": "Je kurz vhodny aj pre zaciatocnikov?", "answer": "Ano, ak uz mas zakladny pohybovy komfort a chut makat." }
+    ]
+  }
+]

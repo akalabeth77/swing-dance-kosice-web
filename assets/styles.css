@@ -103,6 +103,7 @@ input, select, textarea {
 .flash { margin-bottom: 1.5rem; }
 .flash-success { border-color: rgba(31,157,104,0.45); }
 .flash-error { border-color: rgba(197,59,75,0.45); }
+.inline-flash { margin-bottom: 0; }
 .price-badge {
     display: inline-block; margin-top: 1rem; padding: 0.65rem 1rem; border-radius: 999px;
     background: rgba(244,181,63,0.12); border: 1px solid rgba(244,181,63,0.35); color: var(--accent);
@@ -110,6 +111,23 @@ input, select, textarea {
 }
 .site-footer { border-top: 1px solid var(--border); padding: 2rem 0 3rem; background: rgba(7,10,20,0.65); }
 .center-card { text-align: center; }
+.stat-card { display: grid; gap: 0.35rem; }
+.stat-value { font-size: clamp(2rem, 4vw, 3rem); }
+.status-badge {
+    display: inline-flex; align-items: center; justify-content: center;
+    padding: 0.35rem 0.7rem; border-radius: 999px; font-size: 0.78rem; text-transform: uppercase;
+    letter-spacing: 0.08em; border: 1px solid var(--border);
+}
+.status-active { background: rgba(31,157,104,0.14); color: #79e0b6; }
+.status-pending { background: rgba(244,181,63,0.14); color: #ffd58a; }
+.stack-list { display: grid; gap: 1rem; }
+.integration-item, .registration-item { padding-bottom: 1rem; border-bottom: 1px solid var(--border); }
+.integration-item:last-child, .registration-item:last-child { padding-bottom: 0; border-bottom: 0; }
+.integration-note {
+    margin-top: 1rem; padding: 1rem; border-radius: 1rem;
+    border: 1px solid rgba(244,181,63,0.28); background: rgba(244,181,63,0.08);
+}
+.media-workflow { margin-top: 0; }
 
 @media (max-width: 900px) {
     .hero, .section-grid.two-up, .footer-grid, .timeline-item, .card-grid.two-up, .section-grid.three-up, .card-grid.three-up, .photo-grid {

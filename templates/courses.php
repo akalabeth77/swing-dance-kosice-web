@@ -1,8 +1,8 @@
 <section class="section-heading page-header">
     <div>
-        <span class="eyebrow">🕺 Kurzy</span>
-        <h1>Registrácie na kurzy</h1>
-        <p>Každý kurz má vlastný konverzný detail a registračný formulár. Dáta sa ukladajú do lokálneho storage súboru.</p>
+        <span class="eyebrow">Kurzy</span>
+        <h1>Registracie na kurzy</h1>
+        <p>Kazdy kurz ma vlastny detail, registracny formular a pripraveny follow-up na e-mail, CRM alebo checkout.</p>
     </div>
 </section>
 
@@ -17,7 +17,7 @@
                 <li><?= e($course['spots']) ?></li>
             </ul>
             <p><?= e($course['description']) ?></p>
-            <a class="button primary" href="<?= e(url('/courses/' . $course['slug'] . '/register')) ?>">Registrovať sa</a>
+            <a class="button primary" href="<?= e(url('/courses/' . $course['slug'] . '/register')) ?>">Registrovat sa</a>
         </article>
     <?php endforeach; ?>
 </div>

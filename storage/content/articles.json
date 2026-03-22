@@ -1,0 +1,20 @@
+[
+  {
+    "slug": "ako-pripravit-workshop-weekend",
+    "title": "Ako pripravit workshop weekend pre swing komunitu",
+    "date": "2026-02-10",
+    "excerpt": "Kratky editorial format pre recap, promo dalsieho eventu a SEO obsah.",
+    "cover": "article-workshop.svg",
+    "body": "<p>Tento starter pocita s blog sekciou pre recapy workshopov, rozhovory s lektormi aj evergreen obsah. Clanky su pripravene ako JSON data, ale struktura je velmi blizka WordPress custom post types.</p><p>Vies ich neskor presunut do databazy, ACF poli alebo headless CMS bez zasadnej zmeny frontendu.</p>",
+    "tags": ["Workshopy", "Komunita", "SEO"]
+  },
+  {
+    "slug": "preco-mat-event-landing-pages",
+    "title": "Preco mat samostatne landing pages pre eventy",
+    "date": "2026-01-18",
+    "excerpt": "Landing page zvysuje konverzie a zjednodusuje zdielanie eventu na socialnych sietach.",
+    "cover": "article-landing.svg",
+    "body": "<p>Kazdy vacsi event by mal mat vlastnu stranku s benefitmi, programom, cenami a FAQ. V tomto starteri su landing pages oddelene od vseobecneho kalendara, aby sa dalo rychlo pripravit promo pre workshop weekend alebo festival.</p>",
+    "tags": ["Marketing", "Eventy"]
+  }
+]

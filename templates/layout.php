@@ -5,13 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?= e($pageTitle) ?> | <?= e(app_config()['site_name']) ?></title>
-    <meta name="description" content="WordPress-like PHP starter pre Swing Dance Košice.">
+    <meta name="description" content="WordPress-like PHP starter pre Swing Dance Kosice.">
     <link rel="stylesheet" href="<?= e(asset('styles.css')) ?>">
 </head>
 <body>
 <header class="site-header">
     <div class="container header-inner">
-        <a class="brand" href="<?= e(url('/')) ?>">Swing Dance Košice</a>
+        <a class="brand" href="<?= e(url('/')) ?>">Swing Dance Kosice</a>
         <nav>
             <?php foreach ($navigation as $item): ?>
                 <a href="<?= e(url($item['href'])) ?>"><?= e($item['label']) ?></a>
@@ -32,15 +32,15 @@
     <div class="container footer-grid">
         <div>
             <h3>Starter smerovanie</h3>
-            <p>Architektúra je pripravená na migráciu do WordPress témy, custom pluginu alebo ľahkého PHP CMS.</p>
+            <p>Architektura je pripravena na migraciu do WordPress temy, custom pluginu alebo lahsieho PHP CMS.</p>
         </div>
         <div>
-            <h3>Facebook integrácie</h3>
-            <p>Eventy a galérie vedia siahať na Facebook Graph API, ak doplníš <code>FB_PAGE_ID</code> a <code>FB_ACCESS_TOKEN</code>.</p>
+            <h3>Integracie</h3>
+            <p>Obsah ide z lokalnych JSON kolekcii, registracie vedia posielat e-mail a CRM webhook a media uz bezia lokalne.</p>
         </div>
         <div>
             <h3>Komunita</h3>
-            <a href="<?= e(app_config()['facebook_page_url']) ?>" target="_blank" rel="noreferrer">Facebook stránka</a>
+            <a href="<?= e(app_config()['facebook_page_url']) ?>" target="_blank" rel="noreferrer">Facebook stranka</a>
         </div>
     </div>
 </footer>
