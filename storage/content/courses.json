@@ -1,0 +1,23 @@
+[
+  {
+    "slug": "lindy-hop-zaciatocnici",
+    "title": "Lindy Hop Zaciatocnici",
+    "schedule": "Kazdy utorok 18:00 - 19:15",
+    "location": "Kulturpark, Kosice",
+    "price": "79 EUR / 8 tyzdnov",
+    "spots": "12 parov volnych miest",
+    "description": "Kurz s dorazom na groove, partnering a komunitnu atmosferu. Registracia sa zapisuje do JSON storage a da sa lahko napojit na e-mail, CRM alebo checkout.",
+    "benefits": ["8 lekcii", "Pristup na practice night", "Checklist pre novacikov"],
+    "checkout_url": "https://example.com/checkout/lindy-hop-zaciatocnici"
+  },
+  {
+    "slug": "collegiate-shag-open",
+    "title": "Collegiate Shag Open",
+    "schedule": "Kazdy stvrtok 19:30 - 20:45",
+    "location": "Tabacka Kulturfabrik",
+    "price": "89 EUR / 8 tyzdnov",
+    "spots": "Open level",
+    "description": "Energeticky kurz pre tanecnikov, ktori chcu rychle nohy, musicality a show-ready figury.",
+    "benefits": ["Technika kick-step", "Partnering drills", "Mini choreo"]
+  }
+]

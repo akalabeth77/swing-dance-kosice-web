@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 900">
+  <rect width="900" height="900" fill="#352036"/>
+  <rect x="120" y="150" width="660" height="500" rx="28" fill="#51284e"/>
+  <circle cx="230" cy="260" r="70" fill="#f3b24d"/>
+  <circle cx="450" cy="260" r="70" fill="#f3b24d"/>
+  <circle cx="670" cy="260" r="70" fill="#f3b24d"/>
+  <text x="120" y="780" fill="#ffffff" font-family="Georgia, serif" font-size="84">Live Band</text>
+</svg>

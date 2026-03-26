@@ -1,0 +1,30 @@
+[
+  {
+    "slug": "spring-swing-weekender",
+    "title": "Spring Swing Weekender",
+    "excerpt": "Vikend plny social dancingu, workshopov a live music pre komunitu v Kosiciach.",
+    "date": "2026-04-17 18:00:00",
+    "end_date": "2026-04-19 23:00:00",
+    "location": "Kasarne Kulturpark, Kosice",
+    "cta_label": "Kupit pass",
+    "cta_url": "/landing-pages/spring-swing-weekender",
+    "hero_image": "event-weekender.svg",
+    "source": "local-json",
+    "body": "<p>Starter obsahuje plnohodnotnu event landing page, CTA bloky, FAQ, harmonogram aj prepojenie na registracie.</p><p>Ak doplnis Facebook Graph API token, tato sekcia vie tahat nazov, datum, popis aj cover obrazok priamo z FB eventu.</p>",
+    "highlights": ["3 dni workshopov a parties", "Live band a taster class", "Moznost upsellu na full pass"]
+  },
+  {
+    "slug": "solo-jazz-bootcamp",
+    "title": "Solo Jazz Bootcamp",
+    "excerpt": "Intenzivny workshop pre tanecnikov, ktori chcu zlepsit rytmus, groove a stage presence.",
+    "date": "2026-05-09 10:00:00",
+    "end_date": "2026-05-10 17:00:00",
+    "location": "Tabacka Kulturfabrik, Kosice",
+    "cta_label": "Rezervovat miesto",
+    "cta_url": "/landing-pages/solo-jazz-bootcamp",
+    "hero_image": "event-bootcamp.svg",
+    "source": "local-json",
+    "body": "<p>Bootcamp landing page moze obsahovat bio lektorov, video highlighty, cenove balicky a countdown.</p>",
+    "highlights": ["2 levely", "Video recap po akcii", "Early bird pricing"]
+  }
+]

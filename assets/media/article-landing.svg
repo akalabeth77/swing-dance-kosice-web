@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800">
+  <rect width="1200" height="800" fill="#301d31"/>
+  <circle cx="920" cy="240" r="160" fill="#f3b24d"/>
+  <text x="90" y="230" fill="#f3b24d" font-family="Arial, sans-serif" font-size="34" letter-spacing="8">CONTENT</text>
+  <text x="90" y="380" fill="#ffffff" font-family="Georgia, serif" font-size="94" font-weight="700">Landing Pages</text>
+  <text x="90" y="480" fill="#f1d2ea" font-family="Arial, sans-serif" font-size="38">Why dedicated event pages convert better</text>
+</svg>

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900">
+  <rect width="1600" height="900" fill="#0f2630"/>
+  <rect x="1040" y="0" width="560" height="900" fill="#f3b24d"/>
+  <text x="140" y="260" fill="#87d0c4" font-family="Arial, sans-serif" font-size="44" letter-spacing="8">WORKSHOP LANDING</text>
+  <text x="140" y="430" fill="#ffffff" font-family="Georgia, serif" font-size="138" font-weight="700">Solo Jazz</text>
+  <text x="140" y="560" fill="#ffffff" font-family="Georgia, serif" font-size="138" font-weight="700">Bootcamp</text>
+</svg>

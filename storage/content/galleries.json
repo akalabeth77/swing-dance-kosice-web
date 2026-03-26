@@ -1,0 +1,23 @@
+[
+  {
+    "title": "Winter Swing Ball 2025",
+    "description": "Ukazka albumu prepojeneho na Facebook album alebo vlastnu fotogaleriu.",
+    "cover": "gallery-main.svg",
+    "photos": [
+      { "src": "gallery-ball-1.svg", "alt": "Social dancing" },
+      { "src": "gallery-ball-2.svg", "alt": "Band na podiu" },
+      { "src": "gallery-ball-3.svg", "alt": "Tanec v pare" }
+    ],
+    "source": "local-media"
+  },
+  {
+    "title": "Workshop Weekend",
+    "description": "Galeria je pripravena na sekcie highlightov, carousel aj album feed.",
+    "cover": "gallery-workshop-cover.svg",
+    "photos": [
+      { "src": "gallery-workshop-1.svg", "alt": "Workshop skupina" },
+      { "src": "gallery-workshop-2.svg", "alt": "Lektori" }
+    ],
+    "source": "local-media"
+  }
+]

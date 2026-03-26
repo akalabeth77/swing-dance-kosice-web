@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 900">
+  <rect width="900" height="900" fill="#16283a"/>
+  <path d="M160 660c90-190 240-290 390-290s250 90 320 250" fill="none" stroke="#f3b24d" stroke-width="34" stroke-linecap="round"/>
+  <circle cx="330" cy="310" r="90" fill="#f5ede0"/>
+  <circle cx="540" cy="280" r="90" fill="#9fd5d0"/>
+  <text x="120" y="820" fill="#ffffff" font-family="Georgia, serif" font-size="82">Dance Pair</text>
+</svg>
