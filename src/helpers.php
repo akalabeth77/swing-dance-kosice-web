@@ -5,16 +5,12 @@ declare(strict_types=1);
 function app_config(): array
 {
     return [
-        'site_name' => 'Swing Dance Kosice',
+        'site_name' => 'Swing Dance Košice',
         'base_url' => rtrim($_ENV['APP_URL'] ?? getenv('APP_URL') ?: '', '/'),
         'facebook_page_id' => $_ENV['FB_PAGE_ID'] ?? getenv('FB_PAGE_ID') ?: '',
         'facebook_access_token' => $_ENV['FB_ACCESS_TOKEN'] ?? getenv('FB_ACCESS_TOKEN') ?: '',
         'facebook_page_url' => $_ENV['FB_PAGE_URL'] ?? getenv('FB_PAGE_URL') ?: 'https://www.facebook.com/swingdancekosice',
         'storage_path' => __DIR__ . '/../storage',
-        'content_path' => __DIR__ . '/../storage/content',
-        'registration_email' => $_ENV['REGISTRATION_EMAIL'] ?? getenv('REGISTRATION_EMAIL') ?: '',
-        'crm_webhook_url' => $_ENV['CRM_WEBHOOK_URL'] ?? getenv('CRM_WEBHOOK_URL') ?: '',
-        'checkout_url' => $_ENV['DEFAULT_CHECKOUT_URL'] ?? getenv('DEFAULT_CHECKOUT_URL') ?: '',
     ];
 }
 
@@ -37,7 +33,6 @@ function route_request(string $path): array
         preg_match('#^/courses/([a-z0-9-]+)/submit$#', $cleanPath, $matches) === 1 => ['type' => 'course_registration_submit', 'slug' => $matches[1]],
         $cleanPath === '/landing-pages' => ['type' => 'landing_pages'],
         preg_match('#^/landing-pages/([a-z0-9-]+)$#', $cleanPath, $matches) === 1 => ['type' => 'landing_page', 'slug' => $matches[1]],
-        $cleanPath === '/admin' => ['type' => 'admin'],
         default => ['type' => '404'],
     };
 }
@@ -56,11 +51,6 @@ function e(string $value): string
 function asset(string $path): string
 {
     return url('/assets/' . ltrim($path, '/'));
-}
-
-function media_asset(string $path): string
-{
-    return asset('media/' . ltrim($path, '/'));
 }
 
 function format_date(string $date): string
@@ -95,3 +85,18 @@ function set_flash(string $type, string $message): void
 
     $_SESSION['flash'] = ['type' => $type, 'message' => $message];
 }
+
+
+function ensure_storage_ready(): void
+{
+    $storagePath = app_config()['storage_path'];
+    if (!is_dir($storagePath)) {
+        mkdir($storagePath, 0775, true);
+    }
+
+    $registrationsFile = $storagePath . '/registrations.json';
+    if (!is_file($registrationsFile)) {
+        file_put_contents($registrationsFile, "[]\n");
+    }
+}
+

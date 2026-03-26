@@ -1,4 +1,5 @@
 /node_modules
+/.next
 /vendor
 /storage/*.json
 /storage/*.csv
@@ -9,3 +10,6 @@
 .DS_Store
 .env
 .env.local
+/.vercel
+coverage
+.npmrc.local

@@ -1,115 +1,59 @@
-# Swing Dance Kosice PHP Starter
+# Swing Dance Košice starter
 
-WordPress-like PHP starter pre swing komunitu Swing Dance Kosice.
+Starter pre komunitný web Swing Dance Košice so zameraním na:
 
-## Co starter obsahuje
+- 📅 event calendar,
+- 📷 galériu,
+- 📝 workshop blog,
+- 🕺 registrácie na kurzy,
+- 🎟 event landing pages.
 
-- Event calendar pripraveny na nacitanie dat z Facebook udalosti cez Graph API.
-- Galeriu s fallback obsahom a moznostou synchronizacie z Facebook albumov.
-- Blog pre workshopy, recapy a komunitny obsah.
-- Registracie na kurzy cez PHP formular ukladajuci data do `storage/registrations.json`.
-- Event landing pages s hero sekciou, benefitmi, harmonogramom a FAQ.
-- Zakladne admin rozhranie na `/admin`.
+## Runtime model (merge-safe)
 
-## Preco "WordPress-like"
+Repo dnes drží **2 kompatibilné vrstvy**:
 
-Tento repozitar nie je plna instalacia WordPressu. Je to lahky PHP starter s architekturou, ktoru vies neskor presunut do:
+1. **Next.js App Router** (`app/`, `components/`, `lib/`) – primárny deploy target pre Vercel.
+2. **PHP starter** (`index.php`, `src/`, `templates/`) – referenčný fallback / migračný základ.
 
-- WordPress temy,
-- custom pluginu,
-- ACF/Gutenberg blokov,
-- alebo vlastneho maleho PHP CMS.
+Toto rozdelenie je zámerné, aby sa pri merge nezlievali Vercel build veci a PHP runtime logika do jedného súboru.
 
-## Spustenie lokalne
+## Vercel / Next.js
 
-```bash
-php -S 127.0.0.1:8080 router.php
-```
-
-Potom otvor:
-
-- `http://127.0.0.1:8080/`
-- `http://127.0.0.1:8080/events`
-- `http://127.0.0.1:8080/gallery`
-- `http://127.0.0.1:8080/blog`
-- `http://127.0.0.1:8080/courses`
-- `http://127.0.0.1:8080/landing-pages`
-- `http://127.0.0.1:8080/admin`
-
-## Facebook integracia
-
-Ak chces tahat eventy a albumy z Facebooku, nastav env premenne:
+Lokálne:
 
 ```bash
-export FB_PAGE_ID="..."
-export FB_ACCESS_TOKEN="..."
-export FB_PAGE_URL="https://www.facebook.com/swingdancekosice"
-export APP_URL="http://127.0.0.1:8080"
+npm install
+npm run dev
 ```
 
-Starter sa pokusi nacitat:
-
-- `/{page-id}/events`
-- `/{page-id}/albums`
-
-Ak Facebook data nie su dostupne, automaticky pouzije lokalny obsah zo `storage/content`.
-
-## Registracie a integracie
-
-Registracie sa ukladaju do:
-
-- `storage/registrations.json`
-
-Volitelne integracie sa zapinaju cez env premenne:
+Produkčný build (rovnaký ako na Verceli):
 
 ```bash
-export REGISTRATION_EMAIL="team@example.com"
-export CRM_WEBHOOK_URL="https://example.com/webhook"
-export DEFAULT_CHECKOUT_URL="https://example.com/checkout"
+npm run vercel-build
 ```
 
-- `REGISTRATION_EMAIL` odosle notifikaciu po novej registracii.
-- `CRM_WEBHOOK_URL` odosle JSON payload do externeho CRM alebo automatizacie.
-- `DEFAULT_CHECKOUT_URL` nastavi fallback checkout po odoslani formulara.
+## Facebook integrácia
 
-## Obsah a media workflow
+Ak chceš ťahať eventy a albumy z Facebooku, nastav env premenné:
 
-Obsah je teraz rozdeleny do editovatelnych JSON kolekcii:
+```bash
+FB_PAGE_ID="..."
+FB_ACCESS_TOKEN="..."
+```
 
-- `storage/content/events.json`
-- `storage/content/galleries.json`
-- `storage/content/articles.json`
-- `storage/content/courses.json`
-- `storage/content/landing-pages.json`
+Ak Facebook dáta nie sú dostupné, použije sa lokálny demo obsah.
 
-Lokalne media subory su v:
+## Registrácie na kurzy
 
-- `assets/media/`
+- Next.js flow: `app/api/register/route.js` (voliteľný webhook `REGISTRATION_WEBHOOK_URL`).
+- PHP flow: `POST /courses/{slug}/submit` s uložením do `storage/registrations.json`.
 
-To znamena, ze placeholder obrazky uz nie su zavisle od externych URL a da sa s nimi pracovat ako s jednoduchou media kniznicou v ramci projektu.
+## Merge tips
 
-## Struktura projektu
+Ak Git hlási konflikty, rieš ich v tomto poradí:
 
-- `index.php` - front controller.
-- `router.php` - router pre PHP built-in server.
-- `src/` - konfiguracia, routovanie, render logika a Facebook integracia.
-- `templates/` - jednotlive stranky a reusable layout.
-- `assets/styles.css` - vizualny styl startera.
-- `assets/media/` - lokalne obrazky a placeholder media.
-- `storage/` - obsahove JSON kolekcie a registracie.
+1. `package.json`, `next.config.mjs`, `app/globals.css` (Vercel build vrstva),
+2. `src/*.php`, `templates/*.php`, `assets/styles.css` (PHP vrstva),
+3. `README.md`, `.gitignore` (spoločné meta súbory).
 
-## Dalsie logicke kroky
-
-Hotove:
-
-1. Demo arrays su presunute do lokalnej content vrstvy v `storage/content`.
-2. Registracie su pripravene na e-mail, CRM webhook a checkout flow.
-3. Zakladne admin rozhranie je dostupne na `/admin`.
-4. Externe placeholder obrazky su nahradene lokalnym media workflow v `assets/media`.
-
-Najblizsie vhodne kroky:
-
-1. Nahradit JSON content databazou alebo WordPress custom post types.
-2. Pridat realne admin editovanie obsahu, nie len prehlad.
-3. Napojit checkout na konkretny provider ako WooCommerce alebo Stripe.
-4. Doriesit autentifikaciu a opravnenia pre admin cast.
+Týmto poriadkom sa minimalizujú opakované konflikty.

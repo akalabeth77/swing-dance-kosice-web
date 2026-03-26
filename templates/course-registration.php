@@ -1,6 +1,6 @@
 <section class="section-grid two-up">
     <article class="card">
-        <span class="eyebrow">Kurz registracia</span>
+        <span class="eyebrow">Kurz registrácia</span>
         <h1><?= e($course['title']) ?></h1>
         <p><?= e($course['description']) ?></p>
         <ul class="feature-list compact">
@@ -15,26 +15,10 @@
                 <li><?= e($benefit) ?></li>
             <?php endforeach; ?>
         </ul>
-        <?php if ($checkoutUrl !== ''): ?>
-            <div class="integration-note">
-                <strong>Checkout pripraveny</strong>
-                <p>Po odoslani registracie moze pouzivatel pokracovat priamo na platbu.</p>
-            </div>
-        <?php endif; ?>
     </article>
 
     <form class="card form-card" method="post" action="<?= e(url('/courses/' . $course['slug'] . '/submit')) ?>">
-        <h2>Prihlaska</h2>
-        <?php if ($showSuccess): ?>
-            <div class="flash flash-success inline-flash">
-                Registracia bola prijata a ulozena.
-                <?php if ($checkoutUrl !== ''): ?>
-                    <div class="actions">
-                        <a class="button primary" href="<?= e($checkoutUrl) ?>">Pokracovat na checkout</a>
-                    </div>
-                <?php endif; ?>
-            </div>
-        <?php endif; ?>
+        <h2>Prihláška</h2>
         <label>
             Meno a priezvisko
             <input type="text" name="name" required>
@@ -44,11 +28,11 @@
             <input type="email" name="email" required>
         </label>
         <label>
-            Telefon
+            Telefón
             <input type="text" name="phone">
         </label>
         <label>
-            Tanecna rola
+            Tanečná rola
             <select name="dance_role">
                 <option value="">Vyber si</option>
                 <option value="lead">Lead</option>
@@ -57,9 +41,9 @@
             </select>
         </label>
         <label>
-            Poznamka
-            <textarea name="notes" rows="5" placeholder="Partner, skusenosti, otazky..."></textarea>
+            Poznámka
+            <textarea name="notes" rows="5" placeholder="Partner, skúsenosti, otázky..."></textarea>
         </label>
-        <button class="button primary" type="submit">Odoslat registraciu</button>
+        <button class="button primary" type="submit">Odoslať registráciu (PHP fallback)</button>
     </form>
 </section>
