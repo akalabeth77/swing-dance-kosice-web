@@ -1,6 +1,6 @@
 <section class="hero">
     <div>
-        <span class="eyebrow">WordPress-like PHP starter</span>
+        <span class="eyebrow">PHP reference starter</span>
         <h1>Nový základ pre swing komunitu v Košiciach.</h1>
         <p>Pripravený na event calendar, Facebook import, galériu, workshop blog, registrácie na kurzy aj samostatné event landing pages.</p>
         <div class="actions">

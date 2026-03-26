@@ -6,7 +6,8 @@ const nextConfig = {
       { protocol: 'https', hostname: 'scontent.xx.fbcdn.net' },
       { protocol: 'https', hostname: 'lookaside.fbsbx.com' }
     ]
-  }
+  },
+  poweredByHeader: false
 };
 
 export default nextConfig;

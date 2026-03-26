@@ -100,6 +100,7 @@ function handle_course_registration(string $slug): void
         exit;
     }
 
+    ensure_storage_ready();
     $storagePath = app_config()['storage_path'] . '/registrations.json';
     $registrations = [];
 
@@ -111,7 +112,13 @@ function handle_course_registration(string $slug): void
     }
 
     $registrations[] = $payload;
-    file_put_contents($storagePath, json_encode($registrations, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
+    $written = file_put_contents($storagePath, json_encode($registrations, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
+
+    if ($written === false) {
+        set_flash('error', 'Registráciu sa nepodarilo uložiť, skús to prosím znova.');
+        header('Location: ' . url('/courses/' . $slug . '/register'));
+        exit;
+    }
 
     set_flash('success', 'Registrácia bola uložená do starter storage.');
     header('Location: ' . url('/courses/' . $slug . '/register'));

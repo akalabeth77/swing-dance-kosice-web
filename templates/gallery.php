@@ -2,7 +2,7 @@
     <div>
         <span class="eyebrow">📷 Galéria</span>
         <h1>Fotogaléria komunity</h1>
-        <p>Albumy sú pripravené na synchronizáciu z Facebook albumov alebo neskôr z WordPress media library.</p>
+        <p>Albumy sú pripravené na synchronizáciu z Facebook albumov alebo neskôr z WordPress media library, s fallback dátami.</p>
     </div>
 </section>
 

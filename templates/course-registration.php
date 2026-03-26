@@ -44,6 +44,6 @@
             Poznámka
             <textarea name="notes" rows="5" placeholder="Partner, skúsenosti, otázky..."></textarea>
         </label>
-        <button class="button primary" type="submit">Odoslať registráciu</button>
+        <button class="button primary" type="submit">Odoslať registráciu (PHP fallback)</button>
     </form>
 </section>

@@ -8,18 +8,25 @@ Starter pre komunitný web Swing Dance Košice so zameraním na:
 - 🕺 registrácie na kurzy,
 - 🎟 event landing pages.
 
-## Prečo teraz build funguje na Verceli
+## Runtime model (merge-safe)
 
-Predchádzajúca verzia ostala iba ako PHP-only starter, ale Vercel projekt je nakonfigurovaný na `npm run vercel-build`, teda na Next.js build pipeline. Preto je v repozitári teraz opäť **Next.js App Router vrstva**, ktorá zobrazuje rovnaký obsah startera a je deployovateľná na Vercel bez chyby `Couldn't find any pages or app directory`.
+Repo dnes drží **2 kompatibilné vrstvy**:
 
-## Lokálne spustenie
+1. **Next.js App Router** (`app/`, `components/`, `lib/`) – primárny deploy target pre Vercel.
+2. **PHP starter** (`index.php`, `src/`, `templates/`) – referenčný fallback / migračný základ.
+
+Toto rozdelenie je zámerné, aby sa pri merge nezlievali Vercel build veci a PHP runtime logika do jedného súboru.
+
+## Vercel / Next.js
+
+Lokálne:
 
 ```bash
 npm install
 npm run dev
 ```
 
-Produkčný build:
+Produkčný build (rovnaký ako na Verceli):
 
 ```bash
 npm run vercel-build
@@ -34,22 +41,19 @@ FB_PAGE_ID="..."
 FB_ACCESS_TOKEN="..."
 ```
 
-Ak Facebook dáta nie sú dostupné, automaticky sa použije lokálny demo obsah.
+Ak Facebook dáta nie sú dostupné, použije sa lokálny demo obsah.
 
 ## Registrácie na kurzy
 
-Kurzový formulár ide cez `app/api/register/route.js`.
+- Next.js flow: `app/api/register/route.js` (voliteľný webhook `REGISTRATION_WEBHOOK_URL`).
+- PHP flow: `POST /courses/{slug}/submit` s uložením do `storage/registrations.json`.
 
-Voliteľne vieš napojiť webhook:
+## Merge tips
 
-```bash
-REGISTRATION_WEBHOOK_URL="https://..."
-```
+Ak Git hlási konflikty, rieš ich v tomto poradí:
 
-Keď je webhook nastavený, formulár odošle JSON payload ďalej do CRM, e-mail automation alebo iného backendu.
+1. `package.json`, `next.config.mjs`, `app/globals.css` (Vercel build vrstva),
+2. `src/*.php`, `templates/*.php`, `assets/styles.css` (PHP vrstva),
+3. `README.md`, `.gitignore` (spoločné meta súbory).
 
-## Dôležité poznámky
-
-- `app/` obsahuje Vercel-kompatibilný frontend.
-- `lib/` obsahuje starter dáta a Facebook fetch logiku.
-- Pôvodné PHP súbory ostali v repozitári ako referenčný starter / migračný základ, ale Vercel deployment používa Next.js vrstvu.
+Týmto poriadkom sa minimalizujú opakované konflikty.

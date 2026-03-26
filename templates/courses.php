@@ -2,7 +2,7 @@
     <div>
         <span class="eyebrow">🕺 Kurzy</span>
         <h1>Registrácie na kurzy</h1>
-        <p>Každý kurz má vlastný konverzný detail a registračný formulár. Dáta sa ukladajú do lokálneho storage súboru.</p>
+        <p>Každý kurz má vlastný konverzný detail a registračný formulár. Dáta sa ukladajú do lokálneho storage súboru (merge-safe fallback mimo Vercel runtime).</p>
     </div>
 </section>
 

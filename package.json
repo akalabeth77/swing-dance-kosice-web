@@ -1,6 +1,7 @@
 {
   "name": "swing-dance-kosice-web",
   "private": true,
+  "description": "Dual-runtime Swing Dance Košice starter (Next.js for Vercel + PHP reference starter).",
   "scripts": {
     "dev": "next dev",
     "build": "next build",

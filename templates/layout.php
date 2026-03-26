@@ -32,7 +32,7 @@
     <div class="container footer-grid">
         <div>
             <h3>Starter smerovanie</h3>
-            <p>Architektúra je pripravená na migráciu do WordPress témy, custom pluginu alebo ľahkého PHP CMS.</p>
+            <p>Architektúra je pripravená na migráciu do WordPress témy, custom pluginu alebo ľahkého PHP CMS a súbežnú prevádzku s Next.js vrstvou.</p>
         </div>
         <div>
             <h3>Facebook integrácie</h3>

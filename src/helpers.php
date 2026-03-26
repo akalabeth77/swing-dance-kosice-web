@@ -85,3 +85,18 @@ function set_flash(string $type, string $message): void
 
     $_SESSION['flash'] = ['type' => $type, 'message' => $message];
 }
+
+
+function ensure_storage_ready(): void
+{
+    $storagePath = app_config()['storage_path'];
+    if (!is_dir($storagePath)) {
+        mkdir($storagePath, 0775, true);
+    }
+
+    $registrationsFile = $storagePath . '/registrations.json';
+    if (!is_file($registrationsFile)) {
+        file_put_contents($registrationsFile, "[]\n");
+    }
+}
+
