@@ -2,7 +2,7 @@
     <div>
         <span class="eyebrow">📷 Galéria</span>
         <h1>Fotogaléria komunity</h1>
-        <p>Albumy sú pripravené na synchronizáciu z Facebook albumov alebo neskôr z WordPress media library, s fallback dátami.</p>
+        <p>Albumy sú pripravené na synchronizáciu z Facebook albumov, Instagram albumu, Google Photos a neskôr z vlastnej media library.</p>
     </div>
 </section>
 
@@ -13,7 +13,18 @@
                 <h2><?= e($gallery['title']) ?></h2>
                 <p><?= e($gallery['description']) ?></p>
             </div>
-            <span class="meta">Zdroj: <?= e($gallery['source']) ?></span>
+            <span class="meta">
+                <?php 
+                    $sourceLabel = match($gallery['source'] ?? 'local') {
+                        'facebook' => '📘 Facebook',
+                        'instagram' => '📱 Instagram',
+                        'google-photos' => '🖼️ Google Photos',
+                        'local-media' => '💾 Lokálne',
+                        default => e($gallery['source'] ?? 'Neznámy zdroj'),
+                    };
+                    echo $sourceLabel;
+                ?>
+            </span>
         </div>
         <div class="photo-grid">
             <?php foreach ($gallery['photos'] as $photo): ?>

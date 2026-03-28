@@ -73,5 +73,23 @@ function all_events(): array
 
 function all_galleries(): array
 {
-    return facebook_albums_feed();
+    $galleries = [];
+    
+    // Load local galleries from JSON
+    $local = load_json_file('galleries.json');
+    $galleries = array_merge($galleries, $local);
+    
+    // Load from Facebook
+    $facebook = facebook_albums_feed();
+    $galleries = array_merge($galleries, $facebook);
+    
+    // Load from Instagram (when implemented)
+    $instagram = instagram_feed();
+    $galleries = array_merge($galleries, $instagram);
+    
+    // Load from Google Photos (when implemented)
+    $googlePhotos = google_photos_feed();
+    $galleries = array_merge($galleries, $googlePhotos);
+    
+    return $galleries !== [] ? $galleries : [];
 }

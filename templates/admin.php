@@ -40,6 +40,7 @@
             <h2>Kde sa co spravuje</h2>
         </div>
         <ul class="feature-list compact">
+            <li><a href="<?= url('/admin/photos') ?>">📷 Správa Galérií a Albumov</a></li>
             <li>Obsah kolekcii: `storage/content/*.json`</li>
             <li>Prihlasky: `storage/registrations.json`</li>
             <li>Media subory: `assets/media/*`</li>

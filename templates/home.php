@@ -1,21 +1,21 @@
 <section class="hero">
     <div>
-        <span class="eyebrow">PHP reference starter</span>
-        <h1>Nový základ pre swing komunitu v Košiciach.</h1>
-        <p>Pripravený na event calendar, Facebook import, galériu, workshop blog, registrácie na kurzy aj samostatné event landing pages.</p>
+        <span class="eyebrow">🎉 Vitaj v komunite</span>
+        <h1>Swing Dance Košice</h1>
+        <p>Tancujem, učím sa a zabávam sa s komunityou swing tanečníkov z Košíc. Pridaj sa k nám na akcích, kurzoch a sociáloch!</p>
         <div class="actions">
-            <a class="button primary" href="<?= e(url('/events')) ?>">Pozrieť eventy</a>
-            <a class="button" href="<?= e(url('/courses')) ?>">Spustiť registrácie</a>
+            <a class="button primary" href="<?= e(url('/events')) ?>">📅 Videa eventy</a>
+            <a class="button" href="<?= e(url('/courses')) ?>">🕺 Zaregistruj sa na kurz</a>
         </div>
     </div>
     <div class="card spotlight">
-        <h2>Čo je hotové hneď teraz</h2>
+        <h2>✨ Čo očakávaš</h2>
         <ul class="feature-list">
-            <li>📅 kalendár eventov so schopnosťou ťahať dáta z FB stránky</li>
-            <li>📷 galéria pripravená na FB album feed</li>
-            <li>📝 blog sekcia pre workshopy a recapy</li>
-            <li>🕺 registračný formulár na kurzy s uložením do storage</li>
-            <li>🎟 landing pages pre festivaly, bootcampy a socials</li>
+            <li>🎪 Eventy &amp; sociály</li>
+            <li>📚 Kurzy &amp; workshopy</li>
+            <li>📷 Fotogalérie z akcií</li>
+            <li>🎵 Tancovanie &amp; zábava</li>
+            <li>🤝 Skvelá komunita</li>
         </ul>
     </div>
 </section>

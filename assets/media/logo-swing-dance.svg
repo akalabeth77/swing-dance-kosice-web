@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <!-- Background circle -->
+  <circle cx="200" cy="200" r="190" fill="none" stroke="#1a1a1a" stroke-width="2"/>
+  
+  <!-- Title -->
+  <text x="200" y="40" font-size="28" font-weight="bold" text-anchor="middle" fill="#1a1a1a" letter-spacing="2">SWING DANCE</text>
+  <text x="200" y="65" font-size="28" font-weight="bold" text-anchor="middle" fill="#1a1a1a" letter-spacing="2">KOŠICE</text>
+  
+  <!-- Left dancer (male) -->
+  <g transform="translate(120, 180)">
+    <!-- Head -->
+    <circle cx="0" cy="-25" r="12" fill="#1a1a1a"/>
+    <!-- Body -->
+    <rect x="-8" y="-10" width="16" height="25" fill="#1a1a1a"/>
+    <!-- Blue accent (shirt) -->
+    <rect x="-10" y="-8" width="20" height="8" fill="#003da5"/>
+    <!-- Blue pants -->
+    <rect x="-8" y="10" width="16" height="15" fill="#003da5"/>
+    <!-- Left leg -->
+    <line x1="-8" y1="25" x2="-12" y2="40" stroke="#1a1a1a" stroke-width="4" stroke-linecap="round"/>
+    <!-- Right leg -->
+    <line x1="8" y1="25" x2="8" y2="40" stroke="#1a1a1a" stroke-width="4" stroke-linecap="round"/>
+    <!-- Left arm up -->
+    <line x1="-8" y1="0" x2="-30" y2="-15" stroke="#1a1a1a" stroke-width="4" stroke-linecap="round"/>
+    <!-- Right arm -->
+    <line x1="8" y1="2" x2="20" y2="15" stroke="#1a1a1a" stroke-width="4" stroke-linecap="round"/>
+    <!-- Wings/spiky elements on left arm -->
+    <path d="M -25,-18 L -28,-22 L -26,-20 L -28,-18 L -26,-16 L -28,-14" stroke="#1a1a1a" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <!-- Gold shoes -->
+    <circle cx="-12" cy="42" r="4" fill="#FFD700"/>
+    <circle cx="8" cy="42" r="4" fill="#FFD700"/>
+  </g>
+  
+  <!-- Right dancer (female) -->
+  <g transform="translate(280, 180)">
+    <!-- Head with beads -->
+    <circle cx="0" cy="-25" r="12" fill="#1a1a1a"/>
+    <circle cx="-8" cy="-20" r="3" fill="#FFD700"/>
+    <circle cx="-4" cy="-22" r="3" fill="#FFD700"/>
+    <circle cx="0" cy="-23" r="3" fill="#FFD700"/>
+    <circle cx="4" cy="-22" r="3" fill="#FFD700"/>
+    <circle cx="8" cy="-20" r="3" fill="#FFD700"/>
+    <!-- Body -->
+    <rect x="-8" y="-10" width="16" height="12" fill="#003da5"/>
+    <!-- Gold skirt -->
+    <polygon points="0,-4 -12,-2 -14,18 14,18 12,-2" fill="#FFD700"/>
+    <!-- Left leg -->
+    <line x1="-8" y1="18" x2="-10" y2="38" stroke="#1a1a1a" stroke-width="4" stroke-linecap="round"/>
+    <!-- Right leg -->
+    <line x1="8" y1="18" x2="12" y2="38" stroke="#1a1a1a" stroke-width="4" stroke-linecap="round"/>
+    <!-- Left arm raised -->
+    <line x1="-8" y1="0" x2="-28" y2="-20" stroke="#1a1a1a" stroke-width="4" stroke-linecap="round"/>
+    <!-- Right arm down -->
+    <line x1="8" y1="2" x2="22" y2="18" stroke="#1a1a1a" stroke-width="4" stroke-linecap="round"/>
+    <!-- Wings/spiky elements on left arm -->
+    <path d="M -24,-18 L -27,-24 L -25,-21 L -27,-19 L -25,-17 L -27,-13" stroke="#1a1a1a" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <!-- Gold shoes -->
+    <circle cx="-10" cy="40" r="4" fill="#FFD700"/>
+    <circle cx="12" cy="40" r="4" fill="#FFD700"/>
+  </g>
+</svg>

@@ -1,16 +1,16 @@
 [
   {
-    "slug": "spring-swing-weekender",
-    "title": "Spring Swing Weekender",
-    "excerpt": "Vikend plny social dancingu, workshopov a live music pre komunitu v Kosiciach.",
+    "slug": "swinguj-za-jeden-den",
+    "title": "Swinguj za jeden den",
+    "excerpt": "Jednodnovy workshop pre zaciatocnikov, ktori chcu rychlo zacat tancovat a zabavit sa.",
     "date": "2026-04-17 18:00:00",
     "end_date": "2026-04-19 23:00:00",
-    "location": "Kasarne Kulturpark, Kosice",
+    "location": "Vymennik Jegorovovo, Kosice",
     "cta_label": "Kupit pass",
-    "cta_url": "/landing-pages/spring-swing-weekender",
+    "cta_url": "/landing-pages/swinguj-za-jeden-den",
     "hero_image": "event-weekender.svg",
     "source": "local-json",
-    "body": "<p>Starter obsahuje plnohodnotnu event landing page, CTA bloky, FAQ, harmonogram aj prepojenie na registracie.</p><p>Ak doplnis Facebook Graph API token, tato sekcia vie tahat nazov, datum, popis aj cover obrazok priamo z FB eventu.</p>",
+    "body": "<p>Pre vsetkych, ktori nestihli nase kurzy pre zaciatocnikov</p><p>Ak doplnis Facebook Graph API token, tato sekcia vie tahat nazov, datum, popis aj cover obrazok priamo z FB eventu.</p>",
     "highlights": ["3 dni workshopov a parties", "Live band a taster class", "Moznost upsellu na full pass"]
   },
   {

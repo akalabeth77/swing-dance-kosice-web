@@ -80,7 +80,7 @@ function facebook_albums_feed(): array
     ]);
 
     if (!isset($response['data']) || !is_array($response['data'])) {
-        return sample_galleries();
+        return [];
     }
 
     $albums = [];
@@ -105,7 +105,33 @@ function facebook_albums_feed(): array
         ];
     }
 
-    return $albums !== [] ? $albums : sample_galleries();
+    return $albums;
+}
+
+function instagram_feed(): array
+{
+    $config = app_config();
+    $token = $config['instagram_access_token'] ?? '';
+    if ($token === '') {
+        return [];
+    }
+
+    // TODO: Implement Instagram Graph API integration
+    // For now, returns empty array - will be expanded with API implementation
+    return [];
+}
+
+function google_photos_feed(): array
+{
+    $config = app_config();
+    $authFile = $config['google_service_account_file'] ?? '';
+    if ($authFile === '' || !file_exists($authFile)) {
+        return [];
+    }
+
+    // TODO: Implement Google Photos Library API integration
+    // For now, returns empty array - will be expanded with API implementation
+    return [];
 }
 
 function slugify(string $text): string
