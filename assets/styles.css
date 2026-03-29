@@ -35,7 +35,8 @@ code { background: rgba(255,255,255,0.08); padding: 0.15rem 0.4rem; border-radiu
     display: flex; align-items: center; justify-content: space-between; gap: 1rem;
     padding: 1rem 0;
 }
-.brand { font-weight: 800; letter-spacing: 0.02em; }
+.brand { display: inline-flex; align-items: center; }
+.brand-logo { width: min(360px, 65vw); max-height: 92px; height: auto; border-radius: 0; }
 nav { display: flex; gap: 1rem; flex-wrap: wrap; }
 nav a { color: var(--muted); }
 nav a:hover { color: var(--text); }

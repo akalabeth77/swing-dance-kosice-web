@@ -6,8 +6,8 @@ export function SiteShell({ children }) {
     <>
       <header className="site-header">
         <div className="container header-inner">
-          <Link className="brand" href="/">
-            Swing Dance Košice
+          <Link className="brand" href="/" aria-label="Swing Dance Košice">
+            <img alt="Swing Dance Košice logo" className="brand-logo" src="/assets/media/logo-swing-dance-kosice.svg" />
           </Link>
           <nav>
             {navigation.map((item) => (
@@ -28,8 +28,11 @@ export function SiteShell({ children }) {
             <p>Architektúra je pripravená na migráciu do WordPress témy, custom pluginu alebo ľahkého CMS.</p>
           </div>
           <div>
-            <h3>Facebook integrácie</h3>
-            <p>Eventy a galérie vedia siahať na Facebook Graph API, ak doplníš <code>FB_PAGE_ID</code> a <code>FB_ACCESS_TOKEN</code>.</p>
+            <h3>Integrácie zdrojov</h3>
+            <p>
+              Galérie: <code>local</code>, <code>facebook</code>, <code>google-photos</code>, <code>google-drive</code>, <code>instagram</code>.
+              Eventy: <code>local</code>, <code>facebook</code>, <code>google-calendar</code>.
+            </p>
           </div>
           <div>
             <h3>Deploy</h3>

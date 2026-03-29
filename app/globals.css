@@ -70,8 +70,15 @@ code {
 }
 
 .brand {
-  font-weight: 800;
-  letter-spacing: 0.02em;
+  align-items: center;
+  display: inline-flex;
+}
+
+.brand-logo {
+  border-radius: 0;
+  height: auto;
+  max-height: 92px;
+  width: min(360px, 65vw);
 }
 
 nav {
