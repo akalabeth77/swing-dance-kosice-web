@@ -32,16 +32,44 @@ Produkčný build (rovnaký ako na Verceli):
 npm run vercel-build
 ```
 
-## Facebook integrácia
+## Logo
 
-Ak chceš ťahať eventy a albumy z Facebooku, nastav env premenné:
+- Header používa logo súbor `public/assets/media/logo-swing-dance-kosice.svg` (Next.js) a `assets/media/logo-swing-dance-kosice.svg` (PHP).
+- Ak chceš použiť vlastné logo bez zmeny dizajnu, iba vymeň súbor a zachovaj názov.
+
+## Multi-source integrácie eventov a galérií
+
+### Eventy
+
+Nastav poradie zdrojov cez `EVENT_SOURCES`:
 
 ```bash
-FB_PAGE_ID="..."
-FB_ACCESS_TOKEN="..."
+EVENT_SOURCES="local,facebook,google-calendar"
 ```
 
-Ak Facebook dáta nie sú dostupné, použije sa lokálny demo obsah.
+Podporované hodnoty:
+
+- `local` – lokálny demo obsah,
+- `facebook` – Facebook Graph API (`FB_PAGE_ID`, `FB_ACCESS_TOKEN`),
+- `google-calendar` – externý JSON feed (`GOOGLE_CALENDAR_FEED_URL`).
+
+### Galérie / albumy
+
+Nastav poradie zdrojov cez `GALLERY_SOURCES`:
+
+```bash
+GALLERY_SOURCES="local,facebook,google-photos,google-drive,instagram"
+```
+
+Podporované hodnoty:
+
+- `local` – lokálne demo albumy,
+- `facebook` – Facebook albumy,
+- `google-photos` – JSON feed (`GOOGLE_PHOTOS_FEED_URL`),
+- `google-drive` – JSON feed (`GOOGLE_DRIVE_ALBUMS_FEED_URL`),
+- `instagram` – JSON feed (`INSTAGRAM_ALBUMS_FEED_URL`).
+
+Poznámka: Google Photos / Drive / Instagram sú v tomto starteri riešené cez JSON feed endpointy (napr. vlastný backend webhook), aby ostal frontend jednoduchý a Vercel-safe.
 
 ## Registrácie na kurzy
 

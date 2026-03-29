@@ -26,8 +26,8 @@ export default async function HomePage() {
         <div className="card spotlight">
           <h2>Hotové moduly</h2>
           <ul className="feature-list">
-            <li>📅 kalendár eventov s fallbackom a FB fetch logikou</li>
-            <li>📷 galéria pripravená na FB album feed</li>
+            <li>📅 kalendár eventov pre local, Facebook a Google Kalendár feed</li>
+            <li>📷 galéria pre local, FB, Google Photos, Google Disk a Instagram album feed</li>
             <li>📝 blog sekcia pre workshopy a recapy</li>
             <li>🕺 kurzové registrácie cez Vercel-safe endpoint</li>
             <li>🎟 landing pages pre socials, bootcampy a festivaly</li>
@@ -43,7 +43,7 @@ export default async function HomePage() {
         </article>
         <article className="card">
           <h2>Galéria</h2>
-          <p>Fotky sa dajú načítavať z Facebook albumov alebo nahrádzať vlastným médiovým workflow.</p>
+          <p>Fotky sa dajú načítavať z Facebook albumov, Google Photos, Google Disku, Instagramu alebo lokálneho rozhrania.</p>
           <Link href="/gallery">Pozrieť galériu →</Link>
         </article>
         <article className="card">
@@ -86,7 +86,7 @@ export default async function HomePage() {
         </div>
         <div className="card">
           <div className="section-heading">
-            <h2>FB-ready galérie</h2>
+            <h2>Galérie z viacerých zdrojov</h2>
             <Link href="/gallery">Pozrieť všetko</Link>
           </div>
           {galleries.slice(0, 2).map((gallery) => (

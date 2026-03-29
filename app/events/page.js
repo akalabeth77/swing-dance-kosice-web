@@ -13,7 +13,7 @@ export default async function EventsPage() {
       <PageHeader
         eyebrow="📅 Event calendar"
         title="Kalendár eventov"
-        description="Ak je nastavený Facebook Graph API token, zoznam sa automaticky napĺňa z udalostí FB stránky. Inak sa zobrazia ukážkové eventy."
+        description="Udalosti je možné skladať z lokálnych dát, Facebook eventov a Google Kalendára (cez JSON feed)."
       />
 
       <div className="timeline">

@@ -11,7 +11,7 @@ export default async function GalleryPage() {
       <PageHeader
         eyebrow="📷 Galéria"
         title="Fotogaléria komunity"
-        description="Albumy sú pripravené na synchronizáciu z Facebook albumov alebo neskôr z WordPress media library."
+        description="Albumy je možné načítať z local rozhrania, Facebooku, Google Photos, Google Disku a Instagramu (cez JSON feedy)."
       />
 
       {galleries.map((gallery) => (

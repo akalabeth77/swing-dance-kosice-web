@@ -11,7 +11,9 @@
 <body>
 <header class="site-header">
     <div class="container header-inner">
-        <a class="brand" href="<?= e(url('/')) ?>">Swing Dance Košice</a>
+        <a class="brand" href="<?= e(url('/')) ?>" aria-label="Swing Dance Košice">
+            <img class="brand-logo" src="<?= e(asset('media/logo-swing-dance-kosice.svg')) ?>" alt="Swing Dance Košice logo">
+        </a>
         <nav>
             <?php foreach ($navigation as $item): ?>
                 <a href="<?= e(url($item['href'])) ?>"><?= e($item['label']) ?></a>
@@ -35,8 +37,8 @@
             <p>Architektúra je pripravená na migráciu do WordPress témy, custom pluginu alebo ľahkého PHP CMS a súbežnú prevádzku s Next.js vrstvou.</p>
         </div>
         <div>
-            <h3>Facebook integrácie</h3>
-            <p>Eventy a galérie vedia siahať na Facebook Graph API, ak doplníš <code>FB_PAGE_ID</code> a <code>FB_ACCESS_TOKEN</code>.</p>
+            <h3>Integrácie zdrojov</h3>
+            <p>Galérie: <code>local</code>, <code>facebook</code>, <code>google-photos</code>, <code>google-drive</code>, <code>instagram</code>. Eventy: <code>local</code>, <code>facebook</code>, <code>google-calendar</code>.</p>
         </div>
         <div>
             <h3>Komunita</h3>
